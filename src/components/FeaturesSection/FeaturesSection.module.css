@@ -1,0 +1,139 @@
+@reference "tailwindcss";
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding: 96px;
+  margin: 18px;
+  background: linear-gradient(176.17deg, #f9fafb 0.94%, #edf0f3 316.54%);
+  border-radius: 6px;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.headerLabel {
+  @apply text-indigo-700;
+  @apply font-semibold;
+}
+
+.headerTitle {
+  @apply font-semibold;
+  @apply text-5xl;
+}
+
+.headerSubtitle {
+  @apply text-xl;
+  @apply text-neutral-600;
+}
+
+.containerCardContent {
+  display: flex;
+  gap: 32px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 12px;
+  margin-left: 68px;
+}
+
+.containerListItemTitle {
+  display: flex;
+  align-items: center;
+}
+
+.listItemTitle {
+  @apply text-lg;
+  @apply font-semibold;
+  margin-top: 12px;
+}
+
+.listItemIcon {
+  position: absolute;
+  left: -68px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow:
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.listItemText {
+  @apply text-neutral-600
+}
+
+.containerImage {
+  display: flex;
+  max-width: 592px;
+  min-width: 320px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow:
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+
+@media screen and (max-width: 1100px) {
+  .cardContainer {
+    padding: 64px 16px;
+  }
+
+  .containerCardContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .containerImage {
+    max-width: 704px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .cardContainer {
+    padding: 48px 12px;
+    gap: 20px;
+  }
+
+  .headerTitle {
+    @apply text-3xl;
+  }
+
+  .headerSubtitle {
+    @apply text-lg;
+  }
+
+  .listItem {
+    gap: 8px;
+  }
+}

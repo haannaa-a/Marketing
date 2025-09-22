@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Noto Sans";
+  min-height: 100vh;
+  max-width: 1440px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: #F0F0F0;
+  @apply text-neutral-900;
+  @apply text-base;
+  @apply font-normal;
+  margin: 0 auto;
+}
