@@ -1,9 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import FeaturesSection from './components/FeaturesSection/FeaturesSection.tsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './assets/tailwind.css';
+import FeaturesSectionGrid from './components/FeaturesSectionGrid/FeaturesSectionGrid.tsx';
 
 const container = document.getElementById('root');
 
@@ -12,11 +12,7 @@ if (container) {
     <StrictMode>
       <BrowserRouter basename="/Marketing">
         <Routes>
-          <Route path="/" element={<FeaturesSection isRightInPath={false} />} />
-          <Route
-            path="/right"
-            element={<FeaturesSection isRightInPath={true} />}
-          />
+          <Route path="/" element={<FeaturesSectionGrid />} />
         </Routes>
       </BrowserRouter>
     </StrictMode>,
