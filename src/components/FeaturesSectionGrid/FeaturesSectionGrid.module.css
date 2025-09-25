@@ -23,7 +23,7 @@
 
 .listItemTitle {
   @apply text-lg;
-  @apply font-semibold;
+  @apply medium;
   margin-top: 12px;
 }
 
