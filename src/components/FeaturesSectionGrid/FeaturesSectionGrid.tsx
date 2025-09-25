@@ -1,20 +1,16 @@
 import styles from './FeaturesSectionGrid.module.css';
 import { FeaturesSectionGridConstant } from './FeaturesSectionGrid.constant.ts';
+import Card from '../Card/Card.tsx';
+import Header from '../Header/Header.tsx';
 
 const FeaturesSectionGrid = () => {
   return (
-    <div className={styles.cardContainer}>
-      <div className={styles.cardHeader}>
-        <span className={styles.headerLabel}>
-          {FeaturesSectionGridConstant.header.subTitle}
-        </span>
-        <h1 className={styles.headerTitle}>
-          {FeaturesSectionGridConstant.header.title}
-        </h1>
-        <p className={styles.headerSubtitle}>
-          {FeaturesSectionGridConstant.header.text}
-        </p>
-      </div>
+    <Card>
+      <Header
+        subTitle={FeaturesSectionGridConstant.header.subTitle}
+        title={FeaturesSectionGridConstant.header.title}
+        text={FeaturesSectionGridConstant.header.text}
+      />
       <ul className={styles.grid}>
         {FeaturesSectionGridConstant.grid.map((el) => (
           <li className={styles.listItem} key={el.id}>
@@ -27,7 +23,7 @@ const FeaturesSectionGrid = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </Card>
   );
 };
 
