@@ -1,0 +1,25 @@
+@reference "tailwindcss";
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding: 96px;
+  margin: 18px;
+  background: linear-gradient(176.17deg, #f9fafb 0.94%, #edf0f3 316.54%);
+  border-radius: 6px;
+}
+
+
+@media screen and (max-width: 1100px) {
+  .cardContainer {
+    padding: 64px 16px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .cardContainer {
+    padding: 48px 12px;
+    gap: 20px;
+  }
+}

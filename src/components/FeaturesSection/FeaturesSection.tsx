@@ -1,5 +1,7 @@
 import { FeaturesSectionConstants } from './FeaturesSectionConstants.ts';
 import styles from './FeaturesSection.module.css';
+import Card from '../Card/Card.tsx';
+import Header from '../Header/Header.tsx';
 
 const { feature_1, feature_2 } = FeaturesSectionConstants;
 
@@ -11,12 +13,12 @@ function FeaturesSection({ isRightInPath }: Props) {
   const feature = isRightInPath ? feature_2 : feature_1;
 
   return (
-    <div className={styles.cardContainer}>
-      <div className={styles.cardHeader}>
-        <span className={styles.headerLabel}>{feature.header.subTitle}</span>
-        <h1 className={styles.headerTitle}>{feature.header.title}</h1>
-        <p className={styles.headerSubtitle}>{feature.header.text}</p>
-      </div>
+    <Card>
+      <Header
+        subTitle={feature.header.subTitle}
+        title={feature.header.title}
+        text={feature.header.text}
+      />
       <div
         className={`${styles.containerCardContent} ${isRightInPath ? '' : styles.reverse}`}
       >
@@ -41,7 +43,7 @@ function FeaturesSection({ isRightInPath }: Props) {
           ))}
         </ul>
       </div>
-    </div>
+    </Card>
   );
 }
 

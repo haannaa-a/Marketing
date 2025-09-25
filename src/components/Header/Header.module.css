@@ -1,0 +1,36 @@
+@reference "tailwindcss";
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.headerLabel {
+  @apply text-indigo-700;
+  @apply font-semibold;
+}
+
+.headerTitle {
+  @apply font-semibold;
+  @apply text-5xl;
+}
+
+.headerSubtitle {
+  @apply text-xl;
+  @apply text-neutral-600;
+}
+
+
+@media screen and (max-width: 630px) {
+  .headerTitle {
+    @apply text-3xl;
+  }
+
+  .headerSubtitle {
+    @apply text-lg;
+  }
+}
