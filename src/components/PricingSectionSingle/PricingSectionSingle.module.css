@@ -1,0 +1,111 @@
+@reference "tailwindcss";
+
+.containerCardContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px
+}
+
+.containerList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 54px;
+}
+
+.listItem {
+  position: relative;
+}
+
+.listItemIcon {
+  position: absolute;
+  left: -44px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #eef2ff;
+  box-shadow:
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.contentTitle {
+  @apply font-semibold;
+  @apply text-4xl;
+}
+
+.listItemText {
+  @apply text-neutral-600;
+}
+
+.containerPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+  padding: 32px;
+  box-shadow:
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.containerPriceContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.priceLabel {
+  padding: 4px 10px;
+  @apply text-green-700;
+  @apply text-sm;
+  @apply bg-green-50;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+}
+
+.price {
+  @apply text-6xl;
+  @apply font-semibold;
+}
+
+.currencyType {
+  @apply text-neutral-600;
+  @apply text-sm;
+}
+
+.priceText {
+  @apply text-base;
+  @apply text-xl;
+  padding: 0 32px;
+}
+
+@media screen and (max-width: 1100px) {
+  .containerCardContent {
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .containerList {
+    padding-left: 46px;
+  }
+
+  .containerPrice {
+    width: 100%;
+  }
+}
+
+@media screen  and (max-width: 630px){
+  .contentTitle {
+    @apply text-2xl;
+  }
+
+  .price {
+    @apply text-5xl;
+  }
+}

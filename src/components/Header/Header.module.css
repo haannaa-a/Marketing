@@ -11,7 +11,7 @@
 
 .headerLabel {
   @apply text-indigo-700;
-  @apply font-semibold;
+  @apply font-medium;
 }
 
 .headerTitle {
@@ -22,6 +22,7 @@
 .headerSubtitle {
   @apply text-xl;
   @apply text-neutral-600;
+  @apply font-medium;
 }
 
 
