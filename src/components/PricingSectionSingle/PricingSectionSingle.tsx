@@ -3,6 +3,7 @@ import Header from '../Header/Header.tsx';
 import { PricingSectionSingleConstant } from './PricingSectionSingle.constant.ts';
 import styles from './PricingSectionSingle.module.css';
 import Button from '../Button/Button.tsx';
+import List from '../List/List.tsx';
 
 const PricingSectionSingle = () => {
   return (
@@ -17,17 +18,7 @@ const PricingSectionSingle = () => {
           <h3 className={styles.contentTitle}>
             {PricingSectionSingleConstant.content.title}
           </h3>
-          <ul className={styles.containerList}>
-            {PricingSectionSingleConstant.content.list.map((el) => (
-              <li className={styles.listItem} key={el.id}>
-                <span
-                  className={styles.listItemIcon}
-                  style={{ backgroundImage: `url(${el.dataBefore})` }}
-                />
-                <span className={styles.listItemText}>{el.text}</span>
-              </li>
-            ))}
-          </ul>
+          <List data={PricingSectionSingleConstant.content.list} />
         </div>
 
         <div className={styles.containerPrice}>
