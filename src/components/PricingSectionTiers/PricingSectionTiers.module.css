@@ -1,0 +1,25 @@
+@reference "tailwindcss";
+
+.containerToggleButtons {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.containerTiers {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+@media screen and (max-width: 1100px) {
+  .containerTiers {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .containerToggleButtons {
+    gap: 16px;
+  }
+}

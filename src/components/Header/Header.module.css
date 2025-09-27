@@ -11,7 +11,7 @@
 
 .headerLabel {
   @apply text-indigo-700;
-  @apply font-medium;
+  @apply font-semibold;
 }
 
 .headerTitle {
