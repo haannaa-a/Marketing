@@ -1,29 +1,29 @@
 import styles from './FeaturesSectionGrid.module.css';
 import { FeaturesSectionGridConstant } from './FeaturesSectionGrid.constant.ts';
-import Card from '../Card/Card.tsx';
-import Header from '../Header/Header.tsx';
+import ContentWrapper from '../ContentWrapper/ContentWrapper.tsx';
+import ContentHeader from '../ContentHeader/ContentHeader.tsx';
 
 const FeaturesSectionGrid = () => {
   return (
-    <Card>
-      <Header
+    <ContentWrapper>
+      <ContentHeader
         subTitle={FeaturesSectionGridConstant.header.subTitle}
         title={FeaturesSectionGridConstant.header.title}
         text={FeaturesSectionGridConstant.header.text}
       />
       <ul className={styles.grid}>
-        {FeaturesSectionGridConstant.grid.map((el) => (
-          <li className={styles.listItem} key={el.id}>
+        {FeaturesSectionGridConstant.grid.map((item) => (
+          <li className={styles.listItem} key={item.id}>
             <span
               className={styles.listItemIcon}
-              style={{ backgroundImage: `url(${el.dataBefore})` }}
+              style={{ backgroundImage: `url(${item.dataBefore})` }}
             />
-            <h3 className={styles.listItemTitle}>{el.title}</h3>
-            <span className={styles.listItemText}>{el.text}</span>
+            <h3 className={styles.listItemTitle}>{item.title}</h3>
+            <span className={styles.listItemText}>{item.text}</span>
           </li>
         ))}
       </ul>
-    </Card>
+    </ContentWrapper>
   );
 };
 

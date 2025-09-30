@@ -1,38 +1,29 @@
 import styles from './Button.module.css';
+import { ButtonHTMLAttributes } from 'react';
 
-export enum buttonVariant {
+export enum ButtonVariant {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
   TERTIARY = 'tertiary',
 }
 
-type ButtonVariant =
-  | buttonVariant.PRIMARY
-  | buttonVariant.SECONDARY
-  | buttonVariant.TERTIARY;
-
-type Props = {
-  text: string;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  label: string;
   variant?: ButtonVariant;
-  className?: string;
-  onClick?: () => void;
-  disabled?: boolean;
-};
+}
 
 const Button = ({
-  text,
-  variant = buttonVariant.PRIMARY,
+  label,
+  variant = ButtonVariant.PRIMARY,
   className,
-  onClick,
-  disabled,
-}: Props) => {
+  ...props
+}: ButtonProps) => {
   return (
     <button
       className={`${styles.button} ${styles[variant]} ${className}}`}
-      onClick={onClick}
-      disabled={disabled}
+      {...props}
     >
-      {text}
+      {label}
     </button>
   );
 };

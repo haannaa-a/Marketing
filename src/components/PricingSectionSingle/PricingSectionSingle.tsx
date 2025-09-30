@@ -1,14 +1,14 @@
-import Card from '../Card/Card.tsx';
-import Header from '../Header/Header.tsx';
 import { PricingSectionSingleConstant } from './PricingSectionSingle.constant.ts';
 import styles from './PricingSectionSingle.module.css';
 import Button from '../Button/Button.tsx';
 import List from '../List/List.tsx';
+import ContentWrapper from '../ContentWrapper/ContentWrapper.tsx';
+import ContentHeader from '../ContentHeader/ContentHeader.tsx';
 
 const PricingSectionSingle = () => {
   return (
-    <Card>
-      <Header
+    <ContentWrapper>
+      <ContentHeader
         subTitle={PricingSectionSingleConstant.header.subTitle}
         title={PricingSectionSingleConstant.header.title}
         text={PricingSectionSingleConstant.header.text}
@@ -18,7 +18,7 @@ const PricingSectionSingle = () => {
           <h3 className={styles.contentTitle}>
             {PricingSectionSingleConstant.content.title}
           </h3>
-          <List data={PricingSectionSingleConstant.content.list} />
+          <List listDataArray={PricingSectionSingleConstant.content.list} />
         </div>
 
         <div className={styles.containerPrice}>
@@ -36,10 +36,10 @@ const PricingSectionSingle = () => {
           <p className={styles.priceText}>
             {PricingSectionSingleConstant.price.text}
           </p>
-          <Button text={PricingSectionSingleConstant.price.button} />
+          <Button label={PricingSectionSingleConstant.price.button} />
         </div>
       </div>
-    </Card>
+    </ContentWrapper>
   );
 };
 

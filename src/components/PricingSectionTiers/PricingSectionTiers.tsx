@@ -1,10 +1,10 @@
-import Header from '../Header/Header.tsx';
-import Card from '../Card/Card.tsx';
 import { PricingSectionTiersConstant } from './PricingSectionTiers.constant.ts';
 import styles from './PricingSectionTiers.module.css';
-import Button, { buttonVariant } from '../Button/Button.tsx';
+import Button, { ButtonVariant } from '../Button/Button.tsx';
 import TierCard from './Tier/TierCard.tsx';
 import { useState } from 'react';
+import ContentWrapper from '../ContentWrapper/ContentWrapper.tsx';
+import ContentHeader from '../ContentHeader/ContentHeader.tsx';
 
 enum SubscriptionType {
   MONTHLY = 'monthly',
@@ -28,8 +28,8 @@ const PricingSectionTiers = () => {
       : PricingSectionTiersConstant.annually;
 
   return (
-    <Card>
-      <Header
+    <ContentWrapper>
+      <ContentHeader
         subTitle={PricingSectionTiersConstant.header.subTitle}
         title={PricingSectionTiersConstant.header.title}
         text={PricingSectionTiersConstant.header.text}
@@ -38,35 +38,30 @@ const PricingSectionTiers = () => {
         {Object.values(SubscriptionType).map((type) => (
           <Button
             key={PricingSectionTiersConstant.toggleButtons[type]}
-            text={PricingSectionTiersConstant.toggleButtons[type]}
+            label={PricingSectionTiersConstant.toggleButtons[type]}
             variant={
               subscriptionType === type
-                ? buttonVariant.TERTIARY
-                : buttonVariant.SECONDARY
+                ? ButtonVariant.TERTIARY
+                : ButtonVariant.SECONDARY
             }
             onClick={() => setSubscriptionType(type)}
             disabled={subscriptionType === type}
           />
         ))}
       </div>
-      <div className={styles.containerTiers}>
+      <ul className={styles.containerTiers}>
         {Object.values(Plans).map((plan) => (
           <TierCard
             key={tierContent[plan].title}
-            title={tierContent[plan].title}
-            info={tierContent[plan].planInfo}
-            price={tierContent[plan].price}
-            period={tierContent[plan].period}
-            priceInfo={tierContent[plan].priceInfo}
-            listData={tierContent[plan].list}
-            isActive={plan === Plans.POPULAR ? true : false}
+            isActive={plan === Plans.POPULAR}
             additionalCardInfo={
               plan === Plans.POPULAR ? tierContent[plan].additionalCardInfo : ''
             }
+            {...tierContent[plan]}
           />
         ))}
-      </div>
-    </Card>
+      </ul>
+    </ContentWrapper>
   );
 };
 

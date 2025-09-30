@@ -7,11 +7,11 @@ export type ListItemT = {
 };
 
 type ListItemProps = {
-  el: ListItemT;
+  item: ListItemT;
 };
 
-const ListItem = ({ el }: ListItemProps) => {
-  const { dataBefore, text } = el;
+const ListItem = ({ item }: ListItemProps) => {
+  const { dataBefore, text } = item;
 
   return (
     <li className={styles.listItem}>

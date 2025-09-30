@@ -34,3 +34,8 @@
   @apply text-neutral-600;
   @apply text-base;
 }
+
+.form {
+  display: flex;
+  gap: 16px;
+}
