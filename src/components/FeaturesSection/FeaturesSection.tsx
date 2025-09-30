@@ -1,20 +1,20 @@
 import { FeaturesSectionConstants } from './FeaturesSectionConstants.ts';
 import styles from './FeaturesSection.module.css';
-import Card from '../Card/Card.tsx';
-import Header from '../Header/Header.tsx';
+import ContentWrapper from '../ContentWrapper/ContentWrapper.tsx';
+import ContentHeader from '../ContentHeader/ContentHeader.tsx';
 
 const { feature_1, feature_2 } = FeaturesSectionConstants;
 
-type Props = {
+type FeaturesSectionProps = {
   isRightInPath: boolean;
 };
 
-function FeaturesSection({ isRightInPath }: Props) {
+function FeaturesSection({ isRightInPath }: FeaturesSectionProps) {
   const feature = isRightInPath ? feature_2 : feature_1;
 
   return (
-    <Card>
-      <Header
+    <ContentWrapper>
+      <ContentHeader
         subTitle={feature.header.subTitle}
         title={feature.header.title}
         text={feature.header.text}
@@ -31,19 +31,19 @@ function FeaturesSection({ isRightInPath }: Props) {
           />
         </div>
         <ul className={styles.list}>
-          {feature.list.map((el) => (
-            <li className={styles.listItem} key={el.id}>
+          {feature.list.map((item) => (
+            <li className={styles.listItem} key={item.id}>
               <span
                 className={styles.listItemIcon}
-                style={{ backgroundImage: `url(${el.dataBefore})` }}
+                style={{ backgroundImage: `url(${item.dataBefore})` }}
               />
-              <h3 className={styles.listItemTitle}>{el.title}</h3>
-              <span className={styles.listItemText}>{el.text}</span>
+              <h3 className={styles.listItemTitle}>{item.title}</h3>
+              <span className={styles.listItemText}>{item.text}</span>
             </li>
           ))}
         </ul>
       </div>
-    </Card>
+    </ContentWrapper>
   );
 }
 

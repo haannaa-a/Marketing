@@ -2,14 +2,14 @@ import styles from './List.module.css';
 import ListItem, { ListItemT } from './ListItem/ListItem';
 
 type ListProps = {
-  data: ListItemT[];
+  listDataArray: ListItemT[];
 };
 
-const List = ({ data }: ListProps) => {
+const List = ({ listDataArray }: ListProps) => {
   return (
     <ul className={styles.containerList}>
-      {data.map((el) => (
-        <ListItem key={el.id} el={el} />
+      {listDataArray.map((item) => (
+        <ListItem key={item.id} item={item} />
       ))}
     </ul>
   );

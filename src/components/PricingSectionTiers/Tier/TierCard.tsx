@@ -1,4 +1,4 @@
-import Button, { buttonVariant } from '../../Button/Button.tsx';
+import Button, { ButtonVariant } from '../../Button/Button.tsx';
 import List from '../../List/List.tsx';
 import { ListItemT } from '../../List/ListItem/ListItem.tsx';
 import styles from './Tier.module.css';
@@ -24,7 +24,7 @@ const TierCard = ({
   additionalCardInfo,
 }: TierProps) => {
   return (
-    <div
+    <li
       className={`${styles.container} ${isActive ? styles.containerActive : ''}`}
     >
       {isActive && (
@@ -44,13 +44,13 @@ const TierCard = ({
           </div>
           <span>{priceInfo}</span>
         </div>
-        <List data={listData} />
+        <List listDataArray={listData} />
         <Button
-          variant={isActive ? buttonVariant.PRIMARY : buttonVariant.SECONDARY}
-          text={'Buy now'}
+          variant={isActive ? ButtonVariant.PRIMARY : ButtonVariant.SECONDARY}
+          label={'Buy now'}
         />
       </div>
-    </div>
+    </li>
   );
 };
 

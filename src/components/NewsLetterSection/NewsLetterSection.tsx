@@ -1,26 +1,32 @@
-import Card from '../Card/Card.tsx';
 import styles from './NewsLetterSection.module.css';
 import { NewsLetterSectionConstant } from './NewsLetterSection.constant.ts';
 import List from '../List/List.tsx';
-import Form from './Form/Form.tsx';
+import ContentWrapper from '../ContentWrapper/ContentWrapper.tsx';
+import Input from '../Input/Input.tsx';
+import Button from '../Button/Button.tsx';
 
 const NewsLetterSection = () => {
+  const handleSubmit = () => {};
+
   return (
-    <Card>
+    <ContentWrapper>
       <div className={styles.containerContent}>
         <div className={styles.containerTextContent}>
           <h2 className={styles.heading}>
             {NewsLetterSectionConstant.content.header.title}
           </h2>
-          <List data={NewsLetterSectionConstant.content.list} />
+          <List listDataArray={NewsLetterSectionConstant.content.list} />
           <div className={styles.containerForm}>
-            <Form
-              buttonText={NewsLetterSectionConstant.content.form.button}
-              placeholder={
-                NewsLetterSectionConstant.content.form.email.placeholder
-              }
-              id={NewsLetterSectionConstant.content.form.email.id}
-            />
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <Input
+                placeholder={
+                  NewsLetterSectionConstant.content.form.email.placeholder
+                }
+                id={NewsLetterSectionConstant.content.form.email.id}
+                type={'email'}
+              />
+              <Button label={NewsLetterSectionConstant.content.form.button} />
+            </form>
             <span className={styles.logo}>
               {NewsLetterSectionConstant.content.logo}
             </span>
@@ -33,7 +39,7 @@ const NewsLetterSection = () => {
           />
         </div>
       </div>
-    </Card>
+    </ContentWrapper>
   );
 };
 

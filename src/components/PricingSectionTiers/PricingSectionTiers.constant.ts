@@ -11,11 +11,11 @@ export const PricingSectionTiersConstant = {
   monthly: {
     basicPlan: {
       title: 'Basic Plan',
-      planInfo: 'Access to a curated selection of abstract images',
+      info: 'Access to a curated selection of abstract images',
       price: '$9.99',
       period: 'month',
       priceInfo: 'Billed monthly',
-      list: [
+      listData: [
         {
           id: 1,
           text: 'Standard quality images',
@@ -36,11 +36,11 @@ export const PricingSectionTiersConstant = {
     mostPopular: {
       additionalCardInfo: 'Most Popular',
       title: 'Standard Plan',
-      planInfo: 'Next-level Integrations, priced economically',
+      info: 'Next-level Integrations, priced economically',
       price: '$19.99',
       period: 'month',
       priceInfo: 'Billed monthly',
-      list: [
+      listData: [
         {
           id: 1,
           text: 'Expanded library with more diverse abstract images',
@@ -70,11 +70,11 @@ export const PricingSectionTiersConstant = {
     },
     premiumPlan: {
       title: 'Premium Plan',
-      planInfo: 'Experience limitless living for power users',
+      info: 'Experience limitless living for power users',
       price: '$29.99',
       period: 'month',
       priceInfo: 'Billed monthly',
-      list: [
+      listData: [
         {
           id: 1,
           text: 'Full access to the entire image library, including exclusive content',
@@ -111,11 +111,11 @@ export const PricingSectionTiersConstant = {
   annually: {
     basicPlan: {
       title: 'Basic Plan',
-      planInfo: 'Access to a curated selection of abstract images',
+      info: 'Access to a curated selection of abstract images',
       price: '$6.99',
       period: 'month',
       priceInfo: 'Billed annually ($84)',
-      list: [
+      listData: [
         {
           id: 1,
           text: 'Standard quality images',
@@ -136,11 +136,11 @@ export const PricingSectionTiersConstant = {
     mostPopular: {
       additionalCardInfo: 'Most Popular',
       title: 'Standard Plan',
-      planInfo: 'Next-level Integrations, priced economically',
+      info: 'Next-level Integrations, priced economically',
       price: '$15.99',
       period: 'month',
       priceInfo: 'Billed annually ($192)',
-      list: [
+      listData: [
         {
           id: 1,
           text: 'Expanded library with more diverse abstract images',
@@ -170,11 +170,11 @@ export const PricingSectionTiersConstant = {
     },
     premiumPlan: {
       title: 'Premium Plan',
-      planInfo: 'Experience limitless living for power users',
+      info: 'Experience limitless living for power users',
       price: '$25.99',
       period: 'month',
       priceInfo: 'Billed annually ($312)',
-      list: [
+      listData: [
         {
           id: 1,
           text: 'Full access to the entire image library, including exclusive content',
