@@ -1,0 +1,36 @@
+@reference "tailwindcss";
+
+.containerContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 0 32px;
+}
+
+.containerTextContent {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.heading {
+  @apply text-5xl;
+  @apply font-semibold;
+}
+
+.containerImg {
+  max-width: 705px;
+  width: 100%;
+  min-width: 320px;
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logo {
+  @apply text-neutral-600;
+  @apply text-base;
+}
