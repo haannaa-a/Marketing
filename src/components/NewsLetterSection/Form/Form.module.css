@@ -1,0 +1,6 @@
+@reference "tailwindcss";
+
+.form {
+  display: flex;
+  gap: 16px;
+}

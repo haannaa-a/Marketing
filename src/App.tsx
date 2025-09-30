@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './assets/tailwind.css';
-import StatisticsSection from './components/StatisticsSection/StatisticsSection.tsx';
+import NewsLetterSection from './components/NewsLetterSection/NewsLetterSection.tsx';
 
 const container = document.getElementById('root');
 
@@ -12,7 +12,7 @@ if (container) {
     <StrictMode>
       <BrowserRouter basename="/Marketing">
         <Routes>
-          <Route path="/" element={<StatisticsSection />} />
+          <Route path="/" element={<NewsLetterSection />} />
         </Routes>
       </BrowserRouter>
     </StrictMode>,
