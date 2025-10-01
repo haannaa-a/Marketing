@@ -1,27 +1,18 @@
 import styles from './Input.module.css';
 import { InputHTMLAttributes } from 'react';
 
-// export const enum InputType {
-//   TEXT = 'text',
-//   EMAIL = 'email',
-// }
-
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  // placeholder: string;
-  // id: string;
-  // type?: InputType;
+  validationError: string;
 }
 
-// props
-const Input = ({ ...props }: InputProps) => {
+const Input = ({ validationError, ...props }: InputProps) => {
   return (
-    <input
-      className={styles.input}
-      // id={id}
-      // placeholder={placeholder}
-      aria-label={props.id}
-      {...props}
-    />
+    <div className={styles.containerInput}>
+      <input className={styles.input} aria-label={props.id} {...props} />
+      {validationError && (
+        <label className={styles.error}>{validationError}</label>
+      )}
+    </div>
   );
 };
 

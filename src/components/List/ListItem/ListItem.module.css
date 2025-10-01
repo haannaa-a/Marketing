@@ -2,6 +2,7 @@
 
 .listItem {
   position: relative;
+  @apply text-lg;
 }
 
 .listItemIcon {
