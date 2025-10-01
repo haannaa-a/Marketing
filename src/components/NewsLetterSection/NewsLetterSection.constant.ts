@@ -34,10 +34,10 @@ export const NewsLetterSectionConstant = {
       src: 'assets/img/subscribe.jpg',
       alt: 'subscribeImg',
     },
-    toast: {
-      success: 'Subscription successful! Please check your email to confirm.',
-      error:
-        'Failed to subscribe. Please ensure your email is correct or try again later.',
-    },
+  },
+  toast: {
+    success: 'Subscription successful! Please check your email to confirm.',
+    error:
+      'Failed to subscribe. Please ensure your email is correct or try again later.',
   },
 };

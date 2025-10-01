@@ -15,8 +15,10 @@ interface Metric {
 }
 
 const StatisticsSection = () => {
-  const { data, loading, error } = useApi<Metric[]>({ url: METRICS_URL });
-  const metrics = (data ?? []).map((item: Metric) => ({
+  const { data, loading, error } = useApi<{ data: Metric[] }>({
+    url: METRICS_URL,
+  });
+  const metrics = (data?.data ?? []).map((item: Metric) => ({
     ...item,
     metric: formatLabel(toUpperCaseFirstLetter(item.metric)),
   }));

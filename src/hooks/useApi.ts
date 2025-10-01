@@ -13,13 +13,13 @@ export const useApi = <T>({ url }: { url: string }) => {
       try {
         setLoading(true);
 
-        const { data } = await doApiRequest<T>({ url });
+        const data = await doApiRequest<T>(url);
 
         if (data) {
           setFetchData(data);
         }
       } catch (error: any) {
-        setError('Failed to load statistics');
+        setError(error);
       } finally {
         setLoading(false);
       }
