@@ -2,7 +2,7 @@ import styles from './NewsLetterSection.module.css';
 import { NewsLetterSectionConstant } from './NewsLetterSection.constant.ts';
 import List from '../List/List.tsx';
 import ContentWrapper from '../ContentWrapper/ContentWrapper.tsx';
-import Input from '../Input/Input.tsx';
+import Input from '../Form/Input/Input.tsx';
 import Button from '../Button/Button.tsx';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import {
@@ -12,25 +12,21 @@ import {
 import { escapeHtml } from '../../utils/escapeHtml.ts';
 import Toast, { ToastType } from '../Toast/Toast.tsx';
 import { validateEmail } from './utils/validateEmail.ts';
-
-const NEWS_LETTER_URL =
-  'https://www.greatfrontend.com/api/projects/challenges/newsletter';
+import { API } from '../../constants/API.ts';
+import { TOAST_INFO } from '../../constants/DEFAULT_VALUES.ts';
 
 interface NewsSubscription {
   message?: string;
   error?: string;
 }
 
-const DEFAULT_TOAST_INFO = {
-  message: '',
-  type: ToastType.Success,
-};
-
 const NewsLetterSection = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [validationError, setValidationError] = useState('');
-  const [toastInfo, setToastInfo] = useState(DEFAULT_TOAST_INFO);
+  const [toastInfo, setToastInfo] = useState(TOAST_INFO);
+
+  const { doApiRequest } = initApiRequest();
 
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const error = validateEmail(event.target.value);
@@ -39,13 +35,12 @@ const NewsLetterSection = () => {
     setValidationError(error);
   };
 
-  const { doApiRequest } = initApiRequest();
-
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const error = validateEmail(email);
 
     try {
+      const error = validateEmail(email);
+
       if (error) {
         setValidationError(error);
 
@@ -54,7 +49,7 @@ const NewsLetterSection = () => {
 
       setLoading(true);
 
-      const data = await doApiRequest<NewsSubscription>(NEWS_LETTER_URL, {
+      const data = await doApiRequest<NewsSubscription>(API.NEWS_LETTER, {
         body: { email: escapeHtml(email) },
         method: REQUEST_METHOD.Post,
       });

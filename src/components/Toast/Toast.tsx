@@ -12,6 +12,11 @@ type GetToastStylesByTypeReturnType = {
   label: string;
 };
 
+export type ToastInfo = {
+  message: string;
+  type: ToastType;
+};
+
 const getToastStylesByType = (
   type: ToastType,
 ): GetToastStylesByTypeReturnType => {
@@ -39,7 +44,9 @@ const getToastStylesByType = (
   }
 };
 
-const Toast = ({ message, type }: { message: string; type: ToastType }) => {
+type ToastProps = { message: string; type: ToastType };
+
+const Toast = ({ message, type }: ToastProps) => {
   const [isShown, setIsShown] = useState(false);
 
   useEffect(() => {

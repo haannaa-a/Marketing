@@ -1,0 +1,68 @@
+@reference "tailwindcss";
+
+.container {
+  flex-direction: row;
+  background: white;
+  gap: 32px;
+}
+
+.containerTextContent {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  padding: 74px 0;
+}
+
+.heading {
+  @apply text-5xl;
+  @apply font-semibold;
+  margin-bottom: 20px;
+}
+
+.headerText {
+  @apply text-2xl;
+  @apply text-neutral-600;
+  margin-bottom: 48px;
+}
+
+.containerFormSection {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  padding: 32px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow:
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.centeredElements{
+  align-self: 'center'
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .containerTextContent {
+    padding: 0;
+  }
+}
+
+@media screen  and (max-width: 630px){
+  .container {
+    gap: 48px;
+  }
+
+  .heading {
+    @apply text-4xl;
+  }
+
+  .headerText {
+    @apply text-lg;
+  }
+}
+

@@ -1,0 +1,39 @@
+@reference "tailwindcss";
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.containerFormElements {
+  display: flex;
+  flex-direction: column;
+  gap: 24px
+}
+
+.inputsContainer {
+  display: flex;
+  gap: 32px;
+}
+
+.textareaContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+form button {
+  width: 100%;
+}
+
+@media screen  and (max-width: 630px){
+  .inputsContainer {
+    flex-direction: column;
+  }
+
+  .formContainer {
+    padding: 16px;
+  }
+}

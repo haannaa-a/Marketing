@@ -3,6 +3,9 @@
 .containerInput {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .input {
@@ -13,6 +16,7 @@
   border-radius: 4px;
   @apply text-neutral-900;
   @apply text-sm;
+  background-color: #fafafa;
 }
 
 .input:focus {
@@ -30,9 +34,6 @@
   @apply text-neutral-400;
 }
 
-.error {
+.label {
   @apply text-sm;
-  @apply text-red-600;
-  position: absolute;
-  top: 48px;
 }

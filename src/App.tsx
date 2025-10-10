@@ -3,18 +3,21 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './assets/tailwind.css';
-import NewsLetterSection from './components/NewsLetterSection/NewsLetterSection.tsx';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoudary.tsx';
+import ContactSection from './components/ContactSection/ContactSection.tsx';
 
 const container = document.getElementById('root');
 
 if (container) {
   createRoot(container).render(
     <StrictMode>
-      <BrowserRouter basename="/Marketing">
-        <Routes>
-          <Route path="/" element={<NewsLetterSection />} />
-        </Routes>
-      </BrowserRouter>
+      <ErrorBoundary>
+        <BrowserRouter basename="/Marketing">
+          <Routes>
+            <Route path="/" element={<ContactSection />} />
+          </Routes>
+        </BrowserRouter>
+      </ErrorBoundary>
     </StrictMode>,
   );
 } else {

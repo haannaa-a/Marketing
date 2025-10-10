@@ -1,0 +1,8 @@
+@reference "tailwindcss";
+
+.error {
+  @apply text-sm;
+  @apply text-red-600;
+  position: absolute;
+  bottom: -25px;
+}
