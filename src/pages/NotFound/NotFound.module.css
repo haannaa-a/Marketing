@@ -1,0 +1,67 @@
+@reference "tailwindcss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  background-image: url('/assets/img/404.png');
+  padding-top: 226px;
+  padding-bottom: 226px;
+}
+
+.header {
+  align-self: baseline !important;
+  align-items: baseline !important;;
+  text-align: start !important;;
+}
+
+.headerTitle {
+  @apply text-6xl;
+  @apply font-semibold;
+  margin-top: 18px;
+  margin-bottom: 24px;
+}
+
+.headerLabel {
+  @apply text-base;
+  @apply text-indigo-700;
+}
+
+.headerSubtitle {
+  @apply text-neutral-600;
+  @apply text-xl;
+  @apply font-normal;
+}
+
+button {
+  padding: 16px 24px !important;
+  @apply text-lg;
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    padding: 362px 16px;
+  }
+
+  .headerTitle {
+    @apply text-5xl;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .container {
+    gap: 32px;
+    padding: 214px 8px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px 20px !important;
+  }
+
+  .headerTitle {
+    @apply text-4xl;
+    margin-top: 5px;
+    margin-bottom: 18px;
+  }
+}
