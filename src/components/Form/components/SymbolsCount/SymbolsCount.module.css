@@ -1,0 +1,11 @@
+@reference "tailwindcss";
+
+.messageCount {
+  text-align: right;
+  @apply text-sm;
+  @apply text-neutral-500;
+}
+
+.errorCount {
+  @apply text-red-600;
+}

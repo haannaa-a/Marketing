@@ -5,9 +5,7 @@ import ContentHeader from '../ContentHeader/ContentHeader.tsx';
 import { toUpperCaseFirstLetter } from '../../utils/toUpperCaseFirstLetter.ts';
 import { formatLabel } from '../../utils/formatLabel.ts';
 import { useApi } from '../../hooks/useApi.ts';
-
-const METRICS_URL =
-  'https://www.greatfrontend.com/api/projects/challenges/statistics-metrics';
+import { API } from '../../constants/API.ts';
 
 interface Metric {
   metric: string;
@@ -16,7 +14,7 @@ interface Metric {
 
 const StatisticsSection = () => {
   const { data, loading, error } = useApi<{ data: Metric[] }>({
-    url: METRICS_URL,
+    url: API.STATISTICS_METRICS,
   });
   const metrics = (data?.data ?? []).map((item: Metric) => ({
     ...item,

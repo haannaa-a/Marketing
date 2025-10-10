@@ -4,6 +4,7 @@ export type ListItemT = {
   id: number;
   dataBefore: string;
   text: string;
+  href?: string;
 };
 
 type ListItemProps = {
@@ -15,11 +16,23 @@ const ListItem = ({ item }: ListItemProps) => {
 
   return (
     <li className={styles.listItem}>
-      <span
-        className={styles.listItemIcon}
-        style={{ backgroundImage: `url(${dataBefore})` }}
-      />
-      <span className={styles.listItemText}>{text}</span>
+      {item.href ? (
+        <a href={item.href} target={'_blank'}>
+          <span
+            className={styles.listItemIcon}
+            style={{ backgroundImage: `url(${dataBefore})` }}
+          />
+          <span className={styles.listItemText}>{text}</span>{' '}
+        </a>
+      ) : (
+        <>
+          <span
+            className={styles.listItemIcon}
+            style={{ backgroundImage: `url(${dataBefore})` }}
+          />
+          <span className={styles.listItemText}>{text}</span>{' '}
+        </>
+      )}
     </li>
   );
 };

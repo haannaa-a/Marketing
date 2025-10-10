@@ -1,3 +1,5 @@
+import { API } from '../constants/API.ts';
+
 export enum REQUEST_METHOD {
   Get = 'GET',
   Post = 'POST',
@@ -16,14 +18,14 @@ export const initApiRequest = () => {
   const abortController = new AbortController();
 
   const doApiRequest = async <T>(
-    url: string,
+    relativePath: string,
     config: Config = INITIAL_CONFIG,
   ): Promise<T | undefined> => {
     const abortController = new AbortController();
 
     const fetchData = async () => {
       try {
-        const res = await fetch(url, {
+        const res = await fetch(`${API.BASE_URL}${relativePath}`, {
           ...config,
           body: config.body ? JSON.stringify(config.body) : null,
           signal: abortController.signal,

@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 type ContentWrapperProps = {
   children: ReactNode;
-  className: string;
+  className?: string;
 };
 
 const ContentWrapper = ({ children, className }: ContentWrapperProps) => {
