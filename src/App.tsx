@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './assets/tailwind.css';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoudary.tsx';
-import TeamSection from './components/TeamSection/TeamSection.tsx';
+import NotFound from './pages/NotFound/NotFound.tsx';
 
 const container = document.getElementById('root');
 
@@ -14,7 +14,7 @@ if (container) {
       <ErrorBoundary>
         <BrowserRouter basename="/Marketing">
           <Routes>
-            <Route path="/" element={<TeamSection />} />
+            <Route path="/" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </ErrorBoundary>
