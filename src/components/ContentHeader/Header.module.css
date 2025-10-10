@@ -5,24 +5,25 @@
   flex-direction: column;
   align-self: center;
   align-items: center;
-  gap: 20px;
   text-align: center;
 }
 
 .headerLabel {
   @apply text-indigo-700;
   @apply font-semibold;
+  margin-bottom: 12px;
 }
 
 .headerTitle {
   @apply font-semibold;
   @apply text-5xl;
+  margin-bottom: 20px;
 }
 
 .headerSubtitle {
   @apply text-xl;
   @apply text-neutral-600;
-  @apply font-medium;
+  @apply font-normal;
 }
 
 

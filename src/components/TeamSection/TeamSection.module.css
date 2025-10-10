@@ -1,0 +1,53 @@
+@reference "tailwindcss";
+
+.containerTeamList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.containerItem {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.containerImg {
+  width: 100%;
+}
+
+.containerImg img {
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  @apply font-medium;
+  @apply text-xl;
+  margin-bottom: 4px;
+}
+
+.position {
+  @apply font-medium;
+  @apply text-lg;
+  @apply text-indigo-700;
+  margin-bottom: 16px;
+}
+
+.description {
+  @apply text-neutral-600;
+  @apply text-base;
+}
+
+@media screen and (max-width: 1100px) {
+  .containerTeamList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .containerTeamList {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
