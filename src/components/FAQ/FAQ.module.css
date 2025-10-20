@@ -1,0 +1,114 @@
+@reference "tailwindcss";
+
+.mainContainer {
+  gap: 0;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerTitle {
+  @apply text-5xl;
+  @apply font-semibold;
+  text-align: center;
+}
+
+.headerText {
+  @apply text-xl;
+  @apply text-neutral-600;
+}
+
+.questionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 28px;
+  margin-top: 64px;
+}
+
+.questionContainer:not(:first-child) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid #D4D4D4;
+}
+
+.questionContainer:not(:first-child) .containerQuestionTitle {
+  margin-top: 24px;
+}
+
+.containerQuestionTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.question {
+  @apply text-lg;
+  @apply font-medium;
+}
+
+.btnIcon:hover {
+  cursor: pointer;
+}
+
+.answer {
+  @apply text-base;
+  @apply text-neutral-600;
+  margin-top: 8px;
+}
+
+.moreQuestionsContainer {
+  display: flex;
+  gap: 8px;
+  padding: 32px;
+  justify-content: space-between;
+  box-shadow:
+    0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+}
+
+.moreQuestionsContainerTitle {
+  @apply text-xl;
+  @apply font-semibold;
+}
+
+.moreQuestionsContainerText  {
+  @apply text-base;
+  @apply text-neutral-600;
+  margin-top: 8px;
+}
+
+.moreQuestionsLink {
+  @apply text-indigo-700;
+}
+
+
+@media screen and (max-width: 630px) {
+  .questionsContainer {
+    margin-top: 48px;
+  }
+
+  .headerTitle {
+    @apply text-3xl;
+  }
+
+  .headerText {
+    @apply text-lg;
+  }
+
+  .moreQuestionsContainer {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .moreQuestionsContainer button {
+    width: 100%;
+  }
+}
