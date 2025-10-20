@@ -1,0 +1,20 @@
+@reference "tailwindcss";
+
+.containerCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+
+@media screen and (max-width: 1100px){
+  .containerCards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 630px){
+  .containerCards {
+    grid-template-columns: 1fr;
+  }
+}

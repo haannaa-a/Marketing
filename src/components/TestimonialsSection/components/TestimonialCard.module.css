@@ -1,0 +1,45 @@
+@reference "tailwindcss";
+
+.containerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  box-shadow:
+    0px 1px 3px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.06);
+  border: 1px solid #E6E6E6;
+  border-radius: 8px;
+}
+
+.cardHeader {
+  display: flex;
+  gap: 16px;
+}
+
+.imgWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.containerHeaderText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cardTitle {
+  @apply font-semibold;
+  @apply text-lg;
+}
+
+.cardSubTitle {
+  @apply text-sm;
+  @apply text-neutral-600;
+}
+
+.cardText {
+  @apply text-base;
+  @apply text-neutral-600;
+}
