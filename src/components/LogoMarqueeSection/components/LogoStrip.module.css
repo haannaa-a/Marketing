@@ -1,0 +1,14 @@
+@reference "tailwindcss";
+
+.slide {
+  width: 218px;
+  cursor:pointer;
+}
+
+.slide:hover{
+  transition: transform 0.5s linear;
+}
+
+.slide:hover {
+  transform: scale(105%);
+}
