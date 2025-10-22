@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './assets/tailwind.css';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoudary.tsx';
-import FAQ from './components/FAQ/FAQ.tsx';
+import LogoMarqueeSection from './components/LogoMarqueeSection/LogoMarqueeSection.tsx';
 
 const container = document.getElementById('root');
 
@@ -14,7 +14,7 @@ if (container) {
       <ErrorBoundary>
         <BrowserRouter basename="/Marketing">
           <Routes>
-            <Route path="/" element={<FAQ />} />
+            <Route path="/" element={<LogoMarqueeSection />} />
           </Routes>
         </BrowserRouter>
       </ErrorBoundary>
