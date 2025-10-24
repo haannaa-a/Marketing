@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './assets/tailwind.css';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoudary.tsx';
-import TestimonialsSection from './components/TestimonialsSection/TestimonialsSection.tsx';
+import CookieConsentComponent from './components/CookieConsentComponent/CookieConsentComponent.tsx';
 
 const container = document.getElementById('root');
 
@@ -14,7 +14,7 @@ if (container) {
       <ErrorBoundary>
         <BrowserRouter basename="/Marketing">
           <Routes>
-            <Route path="/" element={<TestimonialsSection />} />
+            <Route path="/" element={<CookieConsentComponent />} />
           </Routes>
         </BrowserRouter>
       </ErrorBoundary>

@@ -1,0 +1,58 @@
+@reference "tailwindcss";
+
+.dialog::backdrop {
+  @apply bg-neutral-950/10 backdrop-blur-sm;
+}
+
+.dialog {
+  margin: auto;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  max-width: 384px;}
+
+.containerCookies {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.containerCookieInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.containerCookieHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  @apply text-base;
+  @apply font-semibold;
+}
+
+.text {
+  @apply text-sm;
+  @apply text-neutral-600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form button {
+  width: 100%;
+}
+
+.containerBtns {
+  display: flex;
+  gap: 8px;
+}
